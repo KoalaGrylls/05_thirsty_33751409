@@ -38,9 +38,6 @@ productCategories: [
   ]
 };
 
-// Fix for Images not loading, this uses static path correctly
-const path = require("path");
-app.use(express.static(path.join(__dirname, "public")));
 
 // Handle the main routes
 router.get('/',function(req,res){

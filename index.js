@@ -1,6 +1,8 @@
 // Setup express and ejs
 var express = require ('express')
+const path = require("path");
 var ejs = require('ejs')
+
 
 // Create the express application object
 const app = express()
@@ -9,10 +11,8 @@ const port = 8000
 // Tell Express that we want to use EJS as the templating engine
 app.set('view engine', 'ejs');
 
-
-// Set up the static files directory
-app.use(express.static('public'));
-
+// Set the location for static files
+app.use(express.static(path.join(__dirname, "public")));
 
 // Set up the body parser 
 app.use(express.urlencoded({ extended: true })); 
