@@ -36,7 +36,10 @@ productCategories: [
       address: "4-12-9 Sotokanda, Chiyoda-ku, Tokyo"
     }
   ]
+
 };
+
+shopData.bg = "/images/isbey-van-bg-konbini-day.jpg";
 
 
 // Handle the main routes
