@@ -12,7 +12,9 @@ const port = 8000
 app.set('view engine', 'ejs');
 
 // Set the location for static files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('public'));
+
+app.use('/static', express.static('public'));
 
 // Set up the body parser 
 app.use(express.urlencoded({ extended: true })); 
@@ -24,3 +26,4 @@ app.use('/', mainRoutes);
 // Start the web app listening
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
+module.exports = app;
