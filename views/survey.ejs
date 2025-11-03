@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Survey – <%= shopName %></title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+
+    <div class="conbini-bar"></div>
+
+    <header class="main-container">
+      <nav class="nav">
+        <a href="/" class="logo"><%= shopName %></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/search">Search</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/survey" class="survey-link">Survey</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+
+      <h1>Customer Survey</h1>
+
+      <form action="/survey_submitted" method="POST">
+
+        <label>First Name:</label>
+        <input type="text" name="first" required>
+
+        <label>Surname:</label>
+        <input type="text" name="last" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>How old are you?</label>
+        <input type="text" name="age">
+
+        <label>Which drinks category do you consume?</label>
+        <br>
+        <% for (let i = 0; i < productCategories.length; i++) { %>
+          <input type="radio" name="category" value="<%= productCategories[i] %>">
+          <%= productCategories[i] %> <br>
+        <% } %>
+
+        <label>Are you a student?</label>
+        <input type="checkbox" name="student" value="yes">
+
+        <br><br>
+        <input type="submit" value="Submit Survey">
+
+      </form>
+
+    </div>
+
+  </body>
+</html>

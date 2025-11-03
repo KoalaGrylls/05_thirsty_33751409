@@ -1,15 +1,46 @@
-<!doctype html> 
-<html>  
-  <head>  
-    <title><%=shopName%></title> 
-  </head>  
-  <body>  
-    <h1> This is the register page </h1> 
-    <form method="POST" action="/registered"> 
-        First Name:<input id="first" type="text" name="first" /></p>
-        Last Name:<input id="last" type="text" name="last" /></p>
-        Email:<input id="email" type="text" name="email" /></p>
-        <input type="submit" value="OK" /> 
-    </form> 
-</body>  
+<!doctype html>
+<html>
+  <head>
+    <title><%= shopName %></title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+
+    <div class="conbini-bar"></div>
+
+    <!-- Navigation bar -->
+    <header class="main-container">
+      <nav class="nav">
+        <a href="/" class="logo"><%= shopName %></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/search">Search</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/survey" class="survey-link">Survey</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Page content -->
+    <div class="container">
+      <h1>This is the register page</h1>
+      <form method="POST" action="/registered">
+        <label for="first">First Name:</label>
+        <input id="first" type="text" name="first" />
+        <label for="last">Last Name:</label>
+        <input id="last" type="text" name="last" />
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" />
+        <input type="submit" value="OK" />
+      </form>
+    </div>
+
+  </body>
 </html>
+
+
+
+
+

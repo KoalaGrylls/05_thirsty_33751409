@@ -1,9 +1,42 @@
 // Create a new router
 const express = require("express");
 const router = express.Router();
-// Data to send to the templates
-var shopData = {shopName: "The Thirsty Student", 
-                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
+// This variable holds data about the shop
+var shopData = {
+  shopName: "The Thirsty Student",
+
+// Product categories for the search form
+productCategories: [
+    "Beer",
+    "Wine",
+    "Soft Drinks",
+    "Hot Drinks",
+    "Juice",
+    "Energy Drinks",
+    "Tea",
+    "Coffee",
+    "Water"
+],
+
+  // List of convenience stores
+  shops: [
+    {
+      name: "Ikebukuro Store",
+      manager: "Yamada Ken",
+      address: "1-2-3 Sunshine, Toshima-ku, Tokyo"
+    },
+    {
+      name: "Shibuya Store",
+      manager: "Sato Haru",
+      address: "5-1 Udagawacho, Shibuya-ku, Tokyo"
+    },
+    {
+      name: "Akihabara Store",
+      manager: "Tanaka Mei",
+      address: "4-12-9 Sotokanda, Chiyoda-ku, Tokyo"
+    }
+  ]
+};
 
 
 // Handle the main routes
@@ -31,6 +64,21 @@ router.get("/register", (req,res) => {
  
 router.post("/registered", (req,res) => { 
   res.send(' Hello '+ req.body.first + ' '+ req.body.last +' you are now registered!' + 'We will send an email to you at ' + req.body.email);
+});
+
+
+router.get("/survey", (req, res) => {
+  res.render("survey.ejs", shopData);
+});
+
+
+router.post("/survey_submitted", (req, res) => {
+  const formData = req.body;
+
+  res.render("survey_result.ejs", {
+    shopName: shopData.shopName,
+    survey: formData
+  });
 });
 
 

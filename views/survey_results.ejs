@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title><%= shopName %></title>
+    <title>Survey Results – <%= shopName %></title>
     <link rel="stylesheet" href="/styles.css">
   </head>
 
@@ -9,7 +9,6 @@
 
     <div class="conbini-bar"></div>
 
-    <!-- Navigation bar -->
     <header class="main-container">
       <nav class="nav">
         <a href="/" class="logo"><%= shopName %></a>
@@ -23,20 +22,17 @@
       </nav>
     </header>
 
-    <!-- Page content -->
     <div class="container">
-      <h1><%= shopName %> Shop</h1>
-      <h2>Here are some things that we sell:</h2>
 
-      <ul>
-        <% for (let i = 0; i < productCategories.length; i++) { %>
-          <li><%= productCategories[i] %></li>
-        <% } %>
-      </ul>
+      <h1>Thank you for completing the survey!</h1>
+
+      <p><strong>Name:</strong> <%= survey.first %> <%= survey.last %></p>
+      <p><strong>Email:</strong> <%= survey.email %></p>
+      <p><strong>Age:</strong> <%= survey.age %></p>
+      <p><strong>Favourite Drink Category:</strong> <%= survey.category %></p>
+      <p><strong>Student?</strong> <%= survey.student ? "Yes" : "No" %></p>
+
     </div>
 
   </body>
 </html>
-
-
-
