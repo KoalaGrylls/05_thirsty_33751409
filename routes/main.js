@@ -39,7 +39,7 @@ productCategories: [
 
 };
 
-shopData.bg = "/images/isbey-van-bg-konbini-day.jpg";
+shopData.bg = "public/images/isbey-van-bg-konbini-day.jpg";
 
 
 // Handle the main routes
